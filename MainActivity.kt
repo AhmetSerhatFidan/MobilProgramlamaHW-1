@@ -1,16 +1,15 @@
 package com.ahmetserhatfidan.hw_1
 
 //Item Class
-open class   Item(var name : String, var price : Double){
-    
+open class   Item(var name : String, var price : Double){   
 }
 
 //Food Class
-class Food(name : String, price : Double, var weight : String) : Item(name, price)
+class Food(name : String, price : Double, var weight : String) : Item(name, price){
+}
 
 //Cloth Class
-class Cloth(name : String, price : Double, var type : String) : Item(name, price){
-    
+class Cloth(name : String, price : Double, var type : String) : Item(name, price){   
 }
 
 //Shopping List Class
