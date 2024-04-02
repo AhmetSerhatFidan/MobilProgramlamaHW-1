@@ -1,13 +1,17 @@
-package com.ahmetSerhatFidan.HW-1
+package com.ahmetserhatfidan.hw_1
 
 //Item Class
-open class   Item(var name : String, var price : Double)
+open class   Item(var name : String, var price : Double){
+    
+}
 
 //Food Class
-class Food(var weight : String) : Item(name, price)
+class Food(name : String, price : Double, var weight : String) : Item(name, price)
 
 //Cloth Class
-class Cloth(var type : String) : Item(name, price)
+class Cloth(name : String, price : Double, var type : String) : Item(name, price){
+    
+}
 
 //Shopping List Class
 class ShoppingList(){
@@ -24,7 +28,7 @@ class ShoppingList(){
             print("Please enter the food price:")
             var foodPrice = readln().toDouble()
             var foodWeight = readln()
-            list.add(Food(foodName,foodPrice,foodWeight))
+            itemList.add(Food(foodName,foodPrice,foodWeight))
             println("${foodName} is added successfully.")
         }
 
@@ -35,7 +39,7 @@ class ShoppingList(){
             var clothPrice = readln().toDouble()
             print("Please enter the cloth type:")
             var clothType = readln()
-            list.add(Cloth(clothName,clothPrice, clothType))
+            itemList.add(Cloth(clothName,clothPrice, clothType))
             println("${clothName} is added successfully.")
         }
         
@@ -46,7 +50,7 @@ class ShoppingList(){
 
 //Displaying Item Function
     fun displayItem(){
-        for (i in list){
+        for (i in itemList){
             if(i is Food) {
                 println("${i.name} , ${i.price}$, ${i.weight}kg")
             }
@@ -62,9 +66,9 @@ class ShoppingList(){
     fun deleteItem(){
         println("Please enter the item name you want to delete:")
         var item = readln()
-        for (i in list){
+        for (i in itemList){
             if(item == i.name) {
-                list.remove(i)
+                itemList.remove(i)
                 println("$item is deleted successfully.")
                 break
             }
